@@ -28,6 +28,21 @@ a {
 ul {
     list-style: none;
 }
+.active::after {
+    content: "";
+    display: inline-block;
+    width: 8vw;
+    height: 0.6vw;
+    background-color: #1ED760;
+    border-radius: 1vw;
+    position: absolute;
+    bottom: -50%;
+    left: 30%;
+}
+.active {
+    position: relative;
+    height: 3vw;
+}
 /* END COMMON */
 
 
@@ -62,15 +77,15 @@ ul {
 /* START MAIN */
 main {
     width: 100%;
-    height: calc(100% - 100px);
+    height: calc(100% - 20vw);
     background-color: #141922;
     overflow: hidden;
 }
 /* START MAIN NAV */
 .main-nav {
-    padding: 7px;
+    padding: 1vw;
     display: inline-block;
-    width: 60px;
+    width: 10vw;
     height: 100%;
     background-color: black;
 }
@@ -78,7 +93,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 12vw;
     width: 100%;
 }
 .main-nav li div {
@@ -89,8 +104,8 @@ main {
 }
 /* start nav top */
 .nav-top {
-    height: calc(100% - 100px);
-    min-height: 200px;
+    height: calc(100% - 18vw);
+    min-height: 50vw;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -110,17 +125,21 @@ main {
 /* end nav top */
 
 /* start nav bottom */
-.nav-bottom {
-    height: 100px;
-}
+
 #profile {
     background-image: url("../img/profile.svg");
     background-color: #808080;
     border-radius: 50%;
+    height: 7vw;
+}
+.nav-bottom ul li:first-child {
+    height: 5vw;
 }
 #install {
     background-image: url("../img/download.svg");
     width: 40%;
+    height: 3vw;
+    background-size: contain;
 }
 /* end nav-bottom */
 /* END MAIN NAV */
@@ -129,7 +148,7 @@ main {
 .content {
     display: inline-block;
     position: relative;
-    width: calc(100% - 60px);
+    width: calc(100% - 10vw);
     height: 100%;
     color: white;
     font-weight: 900;
@@ -143,24 +162,24 @@ main {
     align-items: center;
     justify-content: flex-end;
     padding: 20px;
-    height: 100px;
-    width: calc(100% - 60px);
+    height: 20vw;
+    width: calc(100% - 10vw);
     background-color: rgba( 0, 0, 0, 0.5);
 }
 .upgrade-bottom {
-    border: 1px solid white;
-    padding: 13px 40px;
-    border-radius: 40px;
+    border: 0.3vw solid white;
+    padding: 3vw 7vw;
+    border-radius: 7vw;
 }
 .upgrade-bottom a {
     color: white;
-    font-size: 0.8em;
+    font-size: 2.7vw;
 }
 /* end upgrade botton */
 
 /* start contant nav */
 .content-nav {
-    margin-top: 100px;
+    margin-top: 20vw;
     color: #73767B;
     padding: 10px;
 }
@@ -172,53 +191,55 @@ main {
 }
 .content-nav li {
     display: inline-block;
-    font-size: 0.9em;
-    margin: 20px 10px;
+    font-size: 2.7vw;
+    margin: 4vw 1.5vw;
     font-weight: 900;
 }
 /* end content nav */
 
 /* start recently played */
 .recently-played {
-    padding: 20px 0 0 20px;
-    margin-bottom: 60px;
+    padding: 5vw 0 0 5vw;
 }
 .section-title {
     display: block;
-    font-size: 25px;
-    margin-bottom: 40px; 
+    font-size: 5vw; 
+    margin-bottom: 5vw;
 }
 .playlist {
-    width: 210px;
-    height: 290px;
     float: left;
-    margin-right: 20px;
+    margin-right: 3vw;
 }
 .playlist-img {
-    width: 210px;
-    height: 210px;
+    width: 38vw;
+    height: 38vw;
 }
 .playlist-img img {
     width: 100%;
     height: 100%;
 }
 .playlist-title {
-    height: 80px;
+    margin: 4vw 0;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+.playlist-title h3{
+    font-size: 3vw;
+}
 .playlist-title h5{
-    margin-top: 10px;
+    font-size: 2.5vw;
+    margin-top: 2vw;
     color: #73767B;
 }
 /* end recently played */
 
 /* start recomanded for today */
 .recomanded {
-    padding: 20px 0 0 20px;
-    margin-bottom: 60px;
+    padding: 5vw 0 0 5vw;
+    margin: 7vw 0;
 }
 /* END MAIN */
 
@@ -227,7 +248,7 @@ main {
 footer {
     position: relative;
     z-index: 99;
-    height: 100px;
+    height: 20vw;
     width: 100%;
     background-color: #282828;
     color: white;
@@ -235,16 +256,11 @@ footer {
 #player {
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-
-
-
-
 .song-name {
     width: 26%;
     height: 100%;
@@ -253,8 +269,8 @@ footer {
     justify-content: space-between;
 }
 .player-image {
-    height: 45px;
-    width: 45px;
+    height: 6.7vw;
+    width: 6.7vw;
 }
 .player-image img {
     height: 100%;
@@ -264,30 +280,30 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin: 1vw;
+    margin: 2vw;
 }
 .player-name span {
-    font-size: 0.8em;
+    font-size: 2.4vw;
     color: #73767B;
     font-weight: 900;
-    margin-top: 3px;
+    margin-top: 0.5vw;
+}
+.player-name h5 {
+    font-size: 2.5vw;
 }
 .like-save {
-    height: 45px;
+    height: 8vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 3vw;
     color: #73767B;
 }
-
-
 .player-input {
     display: flex;
     width: 38%;
-    height: 100%;
+    height: 15vw;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -298,16 +314,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 20px;
+    font-size: 3.5vw;
 }
 .player-input-top .fa-play-circle {
-    font-size: 40px;
-    margin: 0 1vw;
+    font-size: 6vw;
 }
-.player-input-top [class*="fa-step"] {
-    margin: 0 1vw;
-}
-
 .player-input-bottom{
     display: flex;
     justify-content: space-between;
@@ -315,40 +326,35 @@ footer {
     height: 40%;
     width: 100%;
 }
-.slidercontainer {
-    display: inline-block;
-}
 input[type="range"] {
     -webkit-appearance: none;
     background-color: #5A5A5A;
-    width: 22vw;
-    height: 5px;
+    width: 24vw;
+    height: 1vw;
     border-radius: 5px;
 }
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     background-color: #1ED760;
-    height: 12px;
-    width: 12px;
+    height: 2vw;
+    width: 2vw;
     border-radius: 50%;
     cursor: pointer;
 } 
-
 #slider-volume {
-    width: 10vw;
+    width: 12vw;
 }
 .time-player{
     margin-top: 1vw;
-    font-size: 15px;
+    font-size: 2vw;
     font-weight: 500;
 }
-
-
 .player-volume {
     width: 25%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 2.7vw;
 }
 /* END FOOTER */
 /*#ADFF2F HOVER*/

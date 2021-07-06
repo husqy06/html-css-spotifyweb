@@ -166,19 +166,7 @@ main {
 
 /* start upgrade botton */
 .upgrade {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 20px;
-    height: 20vw;
-    width: calc(100% - 10vw);
-    background-color: rgba( 0, 0, 0, 0.5);
-}
-.upgrade-bottom {
-    border: 1px solid white;
-    padding: 2.5vw 6vw 3vw 6vw; 
-    border-radius: 7vw;
+    display: none;
 }
 .upgrade-bottom a {
     color: white;
@@ -188,7 +176,6 @@ main {
 
 /* start contant nav */
 .content-nav {
-    margin-top: 20vw;
     color: #73767B;
     padding: 10px;
 }
@@ -545,6 +532,12 @@ input[type="range"]::-webkit-slider-thumb {
     .upgrade {
         width: calc(100% - 250px);
         height: 100px;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 20px;
+        background-color: rgba( 0, 0, 0, 0.5);
     }
     .upgrade-bottom:hover a{
         font-size: 15px;
@@ -552,6 +545,7 @@ input[type="range"]::-webkit-slider-thumb {
     .upgrade-bottom {
         padding: 15px 45px;
         border-radius: 45px;
+        border: 1px solid white;
     }
     .upgrade-bottom a {
         font-size: 13px;
@@ -572,6 +566,7 @@ input[type="range"]::-webkit-slider-thumb {
     }
     .hover-wrap {
         position: absolute;
+        display: none;
         height: 100%;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.4);

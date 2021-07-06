@@ -109,12 +109,14 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 #logo {
     background-image: url("../img/logo-small.svg");
 }
 #home {
     background-image: url("../img/home.svg");
+    position: relative;
 }
 #search {
     background-image: url("../img/search.svg");
@@ -122,12 +124,16 @@ main {
 #library {
     background-image: url("../img/libreria.svg");
 }
+.create-playlist {
+    display: none;
+}
 /* end nav top */
 
 /* start nav bottom */
 
 #profile {
     background-image: url("../img/profile.svg");
+    background-size: cover;
     background-color: #808080;
     border-radius: 50%;
     height: 7vw;
@@ -167,7 +173,7 @@ main {
     background-color: rgba( 0, 0, 0, 0.5);
 }
 .upgrade-bottom {
-    border: 0.3vw solid white;
+    border: 1px solid white;
     padding: 3vw 7vw;
     border-radius: 7vw;
 }
@@ -219,11 +225,13 @@ main {
     height: 100%;
 }
 .playlist-title {
+    width: 100%;
     margin: 4vw 0;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     justify-content: center;
 }
 .playlist-title h3{
@@ -343,6 +351,7 @@ input[type="range"]::-webkit-slider-thumb {
 } 
 #slider-volume {
     width: 12vw;
+    margin-bottom: 10px;
 }
 .time-player{
     margin-top: 1vw;
@@ -357,6 +366,254 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 2.7vw;
 }
 /* END FOOTER */
-/*#ADFF2F HOVER*/
-/* <i class="fas fa-volume-mute"></i> */
+
+
+/* START MEDIA QUERY */
+@media (min-width: 639px) {
+
+    /* main */
+    main {
+        height: calc(100% - 100px);
+    }
+    /* main-nav */
+    .main-nav {
+        width: 250px;
+        padding: 20px;
+        font-weight: 600;
+    }
+    .main-nav li {
+        height: 40px;
+        justify-content: flex-start;
+    }
+    .nav-top {
+        min-height: 500px;
+        height: calc(100% - 100px);
+    }
+    #logo {
+        background-image: url("../img/logo.svg");
+    }
+    #desktop-logo {
+        height: 60px;
+        margin: 5px 0 20px;
+    }
+    .nav-icon {
+        position: relative;
+    }
+    .nav-icon::after {
+        position: absolute;
+        left: 25%;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-block;
+        color: #73767B;
+        font-weight: 700;
+    }
+    #home::after {
+        content: "Home";
+        color: white;
+    }
+    #search::after {
+        content: "Cerca";
+    }
+    #search {
+        background-image: url("../img/search-gray.svg");
+    }
+    #library {
+        background-image: url("../img/libreria-gray.svg");
+    }
+    #library::after {
+        content: "La tua libreria";
+    }
+    .create-playlist {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        margin-top: 20px;
+        font-size: 18px;
+        overflow: hidden;
+    }
+    .crea-play div {
+        display: inline-block;
+    }
+    .crea-play {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        color: #73767B;
+    }
+    #plus-botton {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        font-size: 40px;
+        margin-right: 10px;
+        height: 50px;
+        width: 50px;
+        background-color: #73767B;
+        color: black;
+    }
+    .name-playlist {
+        height: 250px;
+        overflow-y: auto;
+        color: #73767B;
+        font-size: 15px;
+    }
+    #install {
+        position: relative;
+        height: 20px;
+    }
+    #profile {
+        margin-top: 40px;
+        height: 30px;
+        width: 30px;
+    }
+    #install::after {
+        display: inline-block;
+        content: "Installa app";
+        color: #73767B;
+        position: absolute;
+        left: 30%;
+        width: 100px;
+    }
+    #profile::after {
+        display: inline-block;
+        content: "John doe";
+        color: #73767B;
+        position: absolute;
+        left: 60px;
+        width: 100px;
+        font-size: 20px;
+        color: white;
+    }
+    .nav-bottom ul li:first-child {
+        border-bottom: 1px solid gray;
+        height: 50px;
+    }
+    /* main-content */
+    .content {
+        width: calc(100% - 250px);
+    }
+    .content-nav {
+        margin-top: 100px;
+    }
+    .content-nav li {
+        font-size: 15px;
+        margin: 25px 10px;
+    }
+    .active::after {
+        width: 40px;
+        height: 3px;
+        border-radius: 3px;
+        bottom: -70%;
+        left: 30%;
+    }
+    .active {
+        height: 15px;
+    }
+    .upgrade {
+        width: calc(100% - 250px);
+        height: 100px;
+    }
+    .upgrade-bottom {
+        padding: 15px 45px;
+        border-radius: 45px;
+    }
+    .upgrade-bottom a {
+        font-size: 13px;
+    }
+    .recently-played,
+    .recomanded {
+        padding: 20px 0 0 20px;
+    }
+    .recomanded {
+        margin: 30px 0;
+    }
+    .section-title {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    .playlist {
+        margin-right: 15px;
+    }
+    .playlist-img {
+        width: 165px;
+        height: 165px;
+    }
+    .playlist-title {
+        width: 165px;
+        margin: 20px 0;
+    }
+    .playlist-title h3{
+        font-size: 17px;
+    }
+    .playlist-title h5{
+        font-size: 15px;
+        margin-top: 8px;
+        color: #73767B;
+    }
+    /* footer */
+    footer {
+        height: 100px;
+    }
+    #player {
+        padding: 10px;
+    }
+    .song-name {
+        width: 190px;
+    }
+    .like-save{
+        margin-left: 14px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .player-image{
+        height: 50px;
+        width: 50px;
+    } 
+    .player-name {
+       display: inline-block;
+       margin: 8px;
+    }
+    .player-name h5 {
+        font-size: 15px;
+        display: block;
+    }
+    .player-name span {
+        font-size: 13px;
+        display: inline;
+    }
+    .player-input {
+        height: 100%;
+        width: auto;
+    }
+    .player-input-top {
+        font-size: 20px;
+        width: 200px;
+    }
+    .player-input-top .fa-play-circle {
+        font-size: 40px;
+    }
+    input[type="range"] {
+        width: 150px;
+        min-width: 150px;
+        height: 5px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        height:10px;
+        width: 10px;
+    } 
+    .time-player{
+        margin: 5px 10px 0px 10px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    #slider-volume {
+        width: 100px;
+        min-width: 100px;
+    }
+    .player-volume {
+        width: 170px;
+        font-size: 15px;
+    }
+}
 
